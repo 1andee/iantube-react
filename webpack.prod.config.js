@@ -21,9 +21,11 @@ module.exports = {
       {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
-        loaders: ['babel?presets[]=react,presets[]=es2015']
-      }
-    ]
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015', 'stage-1']
+        }
+    }]
   },
   plugins: [
     new Dotenv({
