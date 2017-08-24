@@ -1,7 +1,7 @@
 {
-  "name": "redux-simple-starter",
+  "name": "iantube-react",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "React YouTube clone built for Stephen Grider's Modern React with Redux course",
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
