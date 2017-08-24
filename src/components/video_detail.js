@@ -1,7 +1,7 @@
 import React from 'react';
 
 const VideoDetail = ({video}) => {
-  
+
   if (!video) {
     return <div>Loading...</div>
   }
@@ -17,8 +17,8 @@ const VideoDetail = ({video}) => {
       </div>
 
       <div className="details">
-        <div>{video.snippet.title}</div>
-        <div>{video.snippet.description}</div>
+        <div id="video-title"><h4>{video.snippet.title}</h4></div>
+        <div id="video-description">{video.snippet.description}</div>
       </div>
 
     </div>

@@ -35,7 +35,10 @@ class App extends Component {
 
     return (
       <div>
-        <SearchBar onSearchTermChange={videoSearch} />
+        <div id="header">
+          <h2>Ian<span id="tube">Tube</span></h2>
+          <SearchBar onSearchTermChange={videoSearch} />
+        </div>
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
