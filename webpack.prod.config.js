@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const BabiliPlugin = require("babili-webpack-plugin");
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -24,7 +25,17 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'stage-1']
         }
-    }]
+    }
+  ],
+    rules: [
+      {
+      test: /\.css/,
+      use: [
+        'style-loader',
+        { loader: 'css-loader', options: { minimize: true } }
+      ]
+    }
+  ]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -33,7 +44,7 @@ module.exports = {
         API_KEY: JSON.stringify(process.env.API_KEY)
       }
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new BabiliPlugin(),
     new webpack.NoErrorsPlugin(),
   ]
 };
